@@ -78,7 +78,7 @@ fun CommunityScreen(navController: NavHostController) {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.img_4),
+                            painter = painterResource(id = R.drawable.img_5),
                             contentDescription = "Profile",
                             modifier = Modifier
                                 .size(40.dp)
@@ -217,7 +217,7 @@ fun CommunityScreen(navController: NavHostController) {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.img_4),
+                            painter = painterResource(id = R.drawable.earth),
                             contentDescription = "Profile",
                             modifier = Modifier
                                 .size(40.dp)
@@ -226,7 +226,7 @@ fun CommunityScreen(navController: NavHostController) {
                             contentScale = ContentScale.Crop
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("DIY Recycling Projects")
+                        Text("Environment Projects")
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(".")
                         Spacer(modifier = Modifier.width(6.dp))
@@ -367,7 +367,7 @@ fun CommunityScreen(navController: NavHostController) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(16.dp),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
@@ -375,22 +375,28 @@ fun CommunityScreen(navController: NavHostController) {
                         text = "Interests",
                         fontWeight = FontWeight.Bold,
                         fontFamily = FontFamily.SansSerif,
-                        //modifier = Modifier.padding(start = 8.dp)
+                        fontSize = 18.sp, // Increased font size for better readability
+                        color = Color.Black // Set color for the main text
                     )
-                    Text(
-                        text = "See all",
-                        modifier = Modifier
-                         //.padding(start=10.dp)
-                            .size(16.dp),
-                        color = Color(0xFF13818B)
 
-                    )
-                    Icon(
-                        imageVector = Icons.Filled.KeyboardArrowRight,
-                        contentDescription = "",
-                        tint = Color(0xFF13818B),
-                        modifier = Modifier.size(25.dp)
-                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp) // Space between "See All" and the icon
+                    ) {
+                        Text(
+                            text = "See All",
+                            fontSize = 16.sp, // Adjusted font size
+                            color = Color(0xFF13818B),
+                            modifier = Modifier
+                                .padding(end = 4.dp) // Padding for better spacing
+                        )
+                        Icon(
+                            imageVector = Icons.Filled.KeyboardArrowRight,
+                            contentDescription = "Arrow",
+                            tint = Color(0xFF13818B),
+                            modifier = Modifier.size(25.dp) // Adjusted size
+                        )
+                    }
                 }
             }
 
@@ -400,49 +406,83 @@ fun CommunityScreen(navController: NavHostController) {
                     modifier = Modifier.padding(horizontal = 12.dp)
                 ) {
                     item {
-                        Card(
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier
-                                .size(180.dp)
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.width(180.dp)
                         ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.river),
-                                contentScale = ContentScale.Crop,
-                                contentDescription = "Clean river",
-                                modifier = Modifier.fillMaxSize()
+                            Card(
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier.size(180.dp)
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.earth),
+                                    contentScale = ContentScale.Crop,
+                                    contentDescription = "Clean river",
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Text(
+                                text = "Environment",
+                                color = Color.Black,
+                                fontSize = 14.sp,
+                                modifier = Modifier.padding(vertical = 4.dp)
                             )
                         }
                     }
                     item {
-                        Card(
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier
-                                .size(180.dp)
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.width(180.dp)
                         ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.commbin),
-                                contentScale = ContentScale.Crop,
-                                contentDescription = "People helping to recycle",
-                                modifier = Modifier.fillMaxSize()
+                            Card(
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier.size(180.dp)
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.plasticre),
+                                    contentScale = ContentScale.Crop,
+                                    contentDescription = "People helping to recycle",
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Text(
+                                text = "Plastic DIY ",
+                                color = Color.Black,
+                                fontSize = 14.sp,
+                                modifier = Modifier.padding(vertical = 4.dp)
                             )
                         }
                     }
                     item {
-                        Card(
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier
-                                .size(180.dp)
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.width(180.dp)
                         ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.recycling),
-                                contentScale = ContentScale.Crop,
-                                contentDescription = "Circle of recycle",
-                                modifier = Modifier.fillMaxSize()
+                            Card(
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier.size(180.dp)
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.recycling),
+                                    contentScale = ContentScale.Crop,
+                                    contentDescription = "Circle of recycle",
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Text(
+                                text = "Recycling circle",
+                                color = Color.Black,
+                                fontSize = 14.sp,
+                                modifier = Modifier.padding(vertical = 4.dp)
                             )
                         }
                     }
                 }
             }
+
         }
     }
 }

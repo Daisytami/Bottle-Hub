@@ -1,7 +1,6 @@
 package net.ezra.ui.home
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -20,18 +19,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.MailOutline
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -46,28 +39,23 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.pointerHoverIcon
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 import net.ezra.R
-import net.ezra.navigation.ROUTE_ACCOUNT
-import net.ezra.navigation.ROUTE_ADD_PRODUCT
-import net.ezra.navigation.ROUTE_ADD_STUDENTS
 import net.ezra.navigation.ROUTE_COMMUNITY
 import net.ezra.navigation.ROUTE_DASHBOARD
 import net.ezra.navigation.ROUTE_ECANDI
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
-import net.ezra.navigation.ROUTE_MORE
 import net.ezra.navigation.ROUTE_MR_GREEN
 import net.ezra.navigation.ROUTE_PURE
-import net.ezra.navigation.ROUTE_SEARCH
 import net.ezra.navigation.ROUTE_TAKATAKA
 import net.ezra.navigation.ROUTE_VIEW_PROD
 
@@ -94,7 +82,12 @@ fun HomeScreen(navController: NavHostController) {
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = stringResource(id = R.string.bottle))
+                    Text(text = stringResource(id = R.string.bottle),
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Serif,
+                        modifier = Modifier.padding(12.dp)
+                    )
                 },
 
                 navigationIcon = {
@@ -169,7 +162,7 @@ fun HomeScreen(navController: NavHostController) {
                             .height(200.dp)
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.bottlo),
+                            painter = painterResource(id = R.drawable.algea),
                             contentScale = ContentScale.Crop,
                             contentDescription = "gigi",
                             modifier = Modifier
@@ -398,7 +391,7 @@ fun HomeScreen(navController: NavHostController) {
                                 ) {
                                     Box(modifier = Modifier.height(200.dp)) {
                                         Image(
-                                            painter = painterResource(id = R.drawable.purep),
+                                            painter = painterResource(id = R.drawable.pureplanet),
                                             contentScale = ContentScale.Crop,
                                             contentDescription = "gigi",
                                             modifier = Modifier

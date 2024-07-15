@@ -27,6 +27,7 @@ import net.ezra.navigation.ROUTE_DASHBOARD
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_REGISTER
+import net.ezra.navigation.ROUTE_SPLASH
 
 @Composable
 fun LoginScreen(navController: NavController, onLoginSuccess: () -> Unit) {
@@ -62,7 +63,8 @@ fun LoginScreen(navController: NavController, onLoginSuccess: () -> Unit) {
         ) {
 
            // AuthHeader()
-            Text("Login", style = MaterialTheme.typography.h4)
+            Text("Login",color=Color.White,
+                style = MaterialTheme.typography.h4)
             Spacer(modifier = Modifier.height(20.dp))
             val skyBlue = Color(0xff08f3d1)
 

@@ -9,6 +9,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Email
 //noinspection UsingMaterialAndMaterial3Libraries
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material3.Button
@@ -51,34 +56,34 @@ fun TakatakaScreen(navController: NavHostController) {
     ) {
         LazyColumn {
             item {
-                Card(
-                    colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
-                    shape = RoundedCornerShape(8.dp),
-                    modifier = Modifier
-                        .height(300.dp)
-                        .fillMaxWidth()
-                        .padding(all = 30.dp)
-                        .align(Alignment.CenterEnd)
-                )
-                {
-                    Box(
-                        modifier = Modifier
-                            .height(200.dp)
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.takak),
-                            contentScale = ContentScale.Crop,
-                            contentDescription = "Taka",
-                            modifier = Modifier
-                                .width(200.dp)
-                                .height(200.dp)
-                            //  .wrapContentSize(align = Alignment.Center)
-                        )
 
+                    Card(
+                        colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
+                        shape = RoundedCornerShape(20.dp),
+                        modifier = Modifier
+                            .padding(all = 20.dp)
+                            .height(300.dp)
+                            .width(400.dp)
+                    )
+                    {
+                        Box(
+                            modifier = Modifier
+                                .height(300.dp)
+                        ) {
+
+                            Image(
+                                painter = painterResource(id = R.drawable.takak),
+                                contentScale = ContentScale.Crop,
+                                contentDescription = "ecadi",
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                //  .wrapContentSize(align = Alignment.Center)
+                            )
+
+                        }
                     }
                 }
-            }
-            //lazy row showcasing the companies'look
+                    //lazy row showcasing the companies'look
             item {
                 LazyRow(
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -96,7 +101,7 @@ fun TakatakaScreen(navController: NavHostController) {
                                     .height(200.dp)
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.chapo),
+                                    painter = painterResource(id = R.drawable.takas),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "chapo",
                                     modifier = Modifier
@@ -118,7 +123,7 @@ fun TakatakaScreen(navController: NavHostController) {
                                     .height(200.dp)
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.commbin),
+                                    painter = painterResource(id = R.drawable.save),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "commbin",
                                     modifier = Modifier
@@ -141,7 +146,7 @@ fun TakatakaScreen(navController: NavHostController) {
                             )
                             {
                                 Image(
-                                    painter = painterResource(id = R.drawable.recycling),
+                                    painter = painterResource(id = R.drawable.img),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "recycling",
                                     modifier = Modifier
@@ -182,7 +187,7 @@ fun TakatakaScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 150 Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -241,7 +246,7 @@ fun TakatakaScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 200Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -300,7 +305,7 @@ fun TakatakaScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 250 Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -395,9 +400,7 @@ fun TakatakaScreen(navController: NavHostController) {
                     colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
-                    // elevation = 8.dp,
-
+                        .padding(16.dp)
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp)
@@ -409,7 +412,7 @@ fun TakatakaScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "PET bottles, HDPE containers, plastic utensils",
+                            text = "PET bottles, HDPE containers, plastic Bottles",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.Black
                         )
@@ -420,116 +423,141 @@ fun TakatakaScreen(navController: NavHostController) {
                             style = MaterialTheme.typography.bodyLarge,
                             color = Color.Black
                         )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Call,
+                                    contentDescription = "Phone Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Phone number: +254 777 336 224",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Email,
+                                    contentDescription = "Email Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Email: takatakasolutions@gmail.com",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.CheckCircle,
+                                    contentDescription = "Website Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Website: takatakasolutions.co.ke",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Text(
+                            text = "Social Media",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.insta),
+                                contentDescription = "Instagram",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ }
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.face),
+                                contentDescription = "Facebook",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ }
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.twiter),
+                                contentDescription = "Twitter",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ },
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.what),
+                                contentDescription = "Whatsapp",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ },
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Drop off Location",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Rongata road, beside Naivas main",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
 
                         Spacer(modifier = Modifier.height(8.dp))
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Phone number: +254 700 000 000",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Email: example@example.com",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Social Media: @recyclingcenter",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
+                        Text(
+                            text = "Open Monday to Friday, 8 AM to 4 PM",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
 
-
-
-                                Row {
-                                    Image(
-                                        painter = painterResource(id = R.drawable.savedb),
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .size(16.dp)
-                                            .clickable { /* Handle click */ },
-                                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                            Color.Black
-                                        )
-                                    )
-                                    Image(
-                                        painter = painterResource(id = R.drawable.savedb),
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .size(16.dp)
-                                            .clickable { /* Handle click */ },
-                                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                            Color.Black
-                                        )
-                                    )
-                                    Image(
-                                        painter = painterResource(id = R.drawable.savedb),
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .size(16.dp)
-                                            .clickable { /* Handle click */ },
-                                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                            Color.Black
-                                        )
-                                    )
-                                    Image(
-                                        painter = painterResource(id = R.drawable.savedb),
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .size(16.dp)
-                                            .clickable { /* Handle click */ },
-                                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                            Color.Black
-                                        )
-                                    )
-                                }
-
-
-                            Spacer(modifier = Modifier.height(16.dp))
-                            Text(
-                                text = "Operating Hours",
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = Color.Black
-                            )
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(
-                                text = "Monday to Friday, 8 AM to 5 PM",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Operating Hours",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Monday to Friday, 8 AM to 5 PM",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
                     }
                 }
-
+            }
 
             }
         }

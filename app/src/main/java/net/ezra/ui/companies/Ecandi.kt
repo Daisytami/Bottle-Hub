@@ -60,7 +60,7 @@ fun EcandiScreen(navController: NavHostController) {
             item {
                 Card(
                     colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
-                    shape = RoundedCornerShape(4.dp),
+                    shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
                         .padding (all = 20.dp)
                         .height(300.dp)
@@ -455,7 +455,7 @@ fun EcandiScreen(navController: NavHostController) {
                                         )
                                         Spacer(modifier = Modifier.height(4.dp))
                                         Text(
-                                            text = " 10 Bottles for 300 Ksh",
+                                            text = " 10 Bottles for 350 Ksh",
                                             fontSize = 16.sp,
                                             fontWeight = FontWeight.Bold,
                                             color = Color.Black
@@ -568,7 +568,7 @@ fun EcandiScreen(navController: NavHostController) {
                                         )
                                         Spacer(modifier = Modifier.height(4.dp))
                                         Text(
-                                            text = " 10 Bottles for 300 Ksh",
+                                            text = " 10 Bottles for 380 Ksh",
                                             fontSize = 16.sp,
                                             fontWeight = FontWeight.Bold,
                                             color = Color.Black
@@ -640,9 +640,7 @@ fun EcandiScreen(navController: NavHostController) {
                     colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
-                    // elevation = 8.dp,
-
+                        .padding(16.dp)
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp)
@@ -663,106 +661,108 @@ fun EcandiScreen(navController: NavHostController) {
                         Text(
                             text = "Contact Information",
                             style = MaterialTheme.typography.bodyLarge,
-                            modifier = Modifier
-                                .size(16.dp),
-                                    color = Color.Black
+                            color = Color.Black
                         )
-
                         Spacer(modifier = Modifier.height(8.dp))
-                        Row {
-                            Icon(
-                                imageVector = Icons.Filled.Call,
-                                contentDescription = "",
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Call,
+                                    contentDescription = "Phone Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Phone number: +254 730 000 001",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
 
-                                modifier = Modifier.size(16.dp)
-                            )
-                            Text(
-                                text = "Phone number: +254 730 000 001",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Icon(
-                                imageVector = Icons.Filled.Email,
-                                contentDescription = "",
-                              //  tint = Color(0xFF08f3d1),
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                            )
-                            Text(
-                                text = "Email: ecandi@gmail.com",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Icon(
-                                imageVector = Icons.Filled.CheckCircle,
-                                contentDescription = "",
-                                //tint = Color(0xFF08f3d1),
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                            )
-                            Text(
-                                text = "Website:ecandi.co.ke ",
-                                style = MaterialTheme.typography.bodyMedium,
-                                modifier = Modifier
-                                    .size(16.dp),
-                                   // .clickable { ecandi.co.ke },
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Email,
+                                    contentDescription = "Email Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Email: ecandi@gmail.com",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
 
-                                color = Color.Black
-                            )
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.CheckCircle,
+                                    contentDescription = "Website Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Website: ecandi.co.ke",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
                         }
 
                         Spacer(modifier = Modifier.height(16.dp))
 
-                        Row {
+                        Text(
+                            text = "Social Media",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
                             Image(
                                 painter = painterResource(id = R.drawable.insta),
-                                contentDescription = "instagram",
+                                contentDescription = "Instagram",
                                 modifier = Modifier
                                     .size(30.dp)
-                                    .clickable { /* Handle click */ },
-
-                                )
-
-                            Spacer(modifier = Modifier.width(30.dp))
+                                    .clickable { /* Handle click */ }
+                            )
                             Image(
                                 painter = painterResource(id = R.drawable.face),
-                                contentDescription = "facebook",
+                                contentDescription = "Facebook",
                                 modifier = Modifier
                                     .size(30.dp)
-                                    .clickable { /* Handle click */ },
-                               // colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                //    Color.Black
-                               // )
+                                    .clickable { /* Handle click */ }
                             )
-                            Spacer(modifier = Modifier.width(30.dp))
                             Image(
                                 painter = painterResource(id = R.drawable.twiter),
-                                contentDescription = "twitter",
+                                contentDescription = "Twitter",
                                 modifier = Modifier
                                     .size(30.dp)
                                     .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
                             )
-                            Spacer(modifier = Modifier.width(30.dp))
                             Image(
                                 painter = painterResource(id = R.drawable.what),
                                 contentDescription = "Whatsapp",
                                 modifier = Modifier
                                     .size(30.dp)
                                     .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
                             )
                         }
+
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
                             text = "Drop off Location",
@@ -771,18 +771,17 @@ fun EcandiScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Taifa road,beside KCB bank",
+                            text = "Taifa road, beside KCB bank",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.Black
                         )
 
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Open on Monday to Friday, 8 AM to 4 PM",
+                            text = "Open Monday to Friday, 8 AM to 4 PM",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.Black
                         )
-
 
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
@@ -799,6 +798,7 @@ fun EcandiScreen(navController: NavHostController) {
                     }
                 }
             }
+
         }
     }
 }

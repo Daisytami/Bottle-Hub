@@ -188,7 +188,7 @@ fun AddProductScreen(navController: NavController, onProductAdded: () -> Unit) {
                             TextField(
                                 value = productName,
                                 onValueChange = { productName = it },
-                                label = { Text("Item Name") },
+                                label = { Text("Item Name and Description") },
 
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -227,7 +227,7 @@ fun AddProductScreen(navController: NavController, onProductAdded: () -> Unit) {
                             TextField(
                                 value = productDescription,
                                 onValueChange = { productDescription = it },
-                                label = { Text("Item Description") },
+                                label = { Text("Company name") },
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(16.dp),

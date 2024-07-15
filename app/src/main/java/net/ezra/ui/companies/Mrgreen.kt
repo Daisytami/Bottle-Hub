@@ -24,6 +24,9 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.TextField
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -64,25 +67,24 @@ fun GreenScreen(navController: NavHostController) {
             item {
                 Card(
                     colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
-                    shape = RoundedCornerShape(8.dp),
+                    shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
+                        .padding(all = 20.dp)
                         .height(300.dp)
-                        .fillMaxWidth()
-                        .padding(all = 30.dp)
-                        .align(Alignment.CenterEnd)
+                        .width(400.dp)
                 )
                 {
                     Box(
                         modifier = Modifier
-                            .height(200.dp)
+                            .height(300.dp)
                     ) {
+
                         Image(
-                            painter = painterResource(id = R.drawable.mrg),
+                            painter = painterResource(id = R.drawable.mrgreen),
                             contentScale = ContentScale.Crop,
-                            contentDescription = "mr green",
+                            contentDescription = "ecadi",
                             modifier = Modifier
-                                .width(200.dp)
-                                .height(200.dp)
+                                .fillMaxSize()
                             //  .wrapContentSize(align = Alignment.Center)
                         )
 
@@ -107,7 +109,7 @@ fun GreenScreen(navController: NavHostController) {
                                     .height(200.dp)
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.chapo),
+                                    painter = painterResource(id = R.drawable.mrgreenm),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "chapo",
                                     modifier = Modifier
@@ -129,7 +131,7 @@ fun GreenScreen(navController: NavHostController) {
                                     .height(200.dp)
                             ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.commbin),
+                                    painter = painterResource(id = R.drawable.img_1),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "commbin",
                                     modifier = Modifier
@@ -152,7 +154,7 @@ fun GreenScreen(navController: NavHostController) {
                             )
                             {
                                 Image(
-                                    painter = painterResource(id = R.drawable.recycling),
+                                    painter = painterResource(id = R.drawable.img_3),
                                     contentScale = ContentScale.Crop,
                                     contentDescription = "recycling",
                                     modifier = Modifier
@@ -193,7 +195,7 @@ fun GreenScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 200 Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -252,7 +254,7 @@ fun GreenScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 250 Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -371,7 +373,7 @@ fun GreenScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = " Quantity : 10 Bottles for 300 Ksh",
+                            text = " Quantity : 10 Bottles for 350 Ksh",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -406,9 +408,7 @@ fun GreenScreen(navController: NavHostController) {
                     colors = CardDefaults.cardColors(Color(0xffbcbcbc)),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
-                    // elevation = 8.dp,
-
+                        .padding(16.dp)
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp)
@@ -420,7 +420,7 @@ fun GreenScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "PET bottles, HDPE containers, plastic utensils",
+                            text = "PET bottles, HDPE containers, plastic Bottles",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.Black
                         )
@@ -431,99 +431,125 @@ fun GreenScreen(navController: NavHostController) {
                             style = MaterialTheme.typography.bodyLarge,
                             color = Color.Black
                         )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Call,
+                                    contentDescription = "Phone Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Phone number: +254 722 000 010",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Email,
+                                    contentDescription = "Email Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Email: mrgreen@gmail.com",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.CheckCircle,
+                                    contentDescription = "Website Icon",
+                                    modifier = Modifier.size(20.dp),
+                                    tint = Color(0xFF13818B)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Website: mrgreen.co.ke",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = Color.Black
+                                )
+                            }
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Text(
+                            text = "Social Media",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.insta),
+                                contentDescription = "Instagram",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ }
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.face),
+                                contentDescription = "Facebook",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ }
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.twiter),
+                                contentDescription = "Twitter",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ },
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
+                            )
+                            Image(
+                                painter = painterResource(id = R.drawable.what),
+                                contentDescription = "Whatsapp",
+                                modifier = Modifier
+                                    .size(30.dp)
+                                    .clickable { /* Handle click */ },
+                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Drop off Location",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Black
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Longini road, beside ABSA bank",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
 
                         Spacer(modifier = Modifier.height(8.dp))
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Phone number: +254 700 000 000",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Email: example@example.com",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.Black)
-                            )
-                            Text(
-                                text = "Social Media: @recyclingcenter",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = Color.Black
-                            )
-                        }
-
-
-
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.savedb),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .size(16.dp)
-                                    .clickable { /* Handle click */ },
-                                colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                                    Color.Black
-                                )
-                            )
-                        }
-
+                        Text(
+                            text = "Open Monday to Friday, 9 AM to 5 PM",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
 
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(

@@ -1,6 +1,7 @@
 package net.ezra.ui.products
 
 import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -56,10 +57,12 @@ import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_VIEW_PROD
 import net.ezra.navigation.ROUTE_VIEW_STUDENTS
 import androidx.compose.material.LinearProgressIndicator
+import net.ezra.navigation.ROUTE_MR_GREEN
 
 data class Product(
     var id: String = "",
     val name: String = "",
+    val comp : String ="",
     val description: String ="",
     val price: Double = 0.0,
     var imageUrl: String = ""
@@ -81,6 +84,11 @@ fun ProductListScreen(navController: NavController, products: List<Product>) {
             productList = fetchedProducts
             isLoading = false
         }
+    }
+    BackHandler {navController.navigate(ROUTE_HOME){
+        popUpTo(ROUTE_VIEW_PROD){
+            inclusive = true} }
+
     }
 
     Scaffold(
